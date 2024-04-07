@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+    --primary-color: #02799D;
+    --button-pressed-color: #FFFFFF;
+}
+
+body {
+    display: grid;
+    place-content: center;
+    font-size: 1.6rem;
+    height: 100vh;
+}
+
+#app {
+    display: grid;
+    justify-items: center;
+    grid-gap: 19.2rem;
+    grid-template-columns: 1fr 1fr;
+}
+
+#timer-controls {
+    display: grid;
+    place-content: center;
+    height: 100vh;
+}
+
+#timer {
+    display: flex;
+    font-size: 13.6rem;
+    font-family: sans-serif;
+}
+
+button {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+}
+
+    
+#controls {
+    display:flex;
+    gap: 4rem;
+}
+
+#controls, button {
+    font-size: 5.4rem;
+}
+
+#sound-controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-content: center;
+    height: 100vh;
+    grid-gap: 1.8rem;
+}
+
+#sound-controls button.button-control {
+    border-radius: 1.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem;
+}
+
+#sound-controls button.button-control:not(.pressed) {
+    background-color: #E1E1E6;
+}
+
+#sound-controls button.button-control:not(.pressed) svg {
+    fill: #323238;
+}
+
+#sound-controls button.button-control.pressed {
+    background-color: var(--primary-color)
+}
+
+#sound-controls button.button-control.pressed svg {
+    fill: #FFFFFF;
+}
+
+html:not(.running) #controls #pause,
+html:not(.running) #controls #stop,
+.running #controls #play,
+.running #controls #set {
+    display: none;
+}
+
+@media screen and (max-width: 64.8rem) {
+    #app {
+        grid-gap: 4.2rem;
+        grid-template-columns: 1fr;
+    }
+
+    #timer-controls {
+        height: auto;
+    }
+
+    #sound-controls {
+        height: auto;
+    }
+}
